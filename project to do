@@ -6,8 +6,8 @@ Weekend Project To Do List
  X   -set up inputs
  X   -insert button
 git commit
-    -insert table format
-    -put place for total Salary
+ X   -insert table format
+ X   -put place for total Salary
 git commit
     -document ready
     -button listener
