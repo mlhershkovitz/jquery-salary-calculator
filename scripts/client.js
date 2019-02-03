@@ -91,5 +91,6 @@ function calculateMonthly() {
 //delete employee function
 function deleteEmployee() {
     console.log('delete button clicked');
-
-}
+    $(this).closest('tr').remove();
+    alert ('Employee has been deleted.');
+};//end deleteEmployee
