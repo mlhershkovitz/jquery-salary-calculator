@@ -80,7 +80,12 @@ function calculateMonthly() {
     //append total
     let monthlyCost = $('#totalMonthly');
     monthlyCost.empty();
-    monthlyCost.append(`<span>${totalMonthlyRounded}</span>`)
+    monthlyCost.append(`<span>$ ${totalMonthlyRounded}</span>`);
+
+    //change background if over $20,000
+    if (totalMonthlyRounded > 20000) {
+        $('.total').css('background-color', 'red');
+     }//end if statement
 }; //end calculateMonthly
 
 //delete employee function
