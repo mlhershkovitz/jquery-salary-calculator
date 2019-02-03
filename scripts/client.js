@@ -31,6 +31,15 @@ function addEmployee() {
     let newEmployee = new Employee(firstNameIn, lastNameIn, idNumberIn, jobTitleIn, annualSalaryIn);
     employeeArray.push(newEmployee);
 
+    //setting up annual salary for the monthly total
+    let salaryTotal = 0;
+    for (let employees of employeeArray) {
+        salaryTotal += Number(employees.annualSalary);
+    } // end loop
+    console.log('salaryTotal:', salaryTotal);
+    //split into monthly
+    let totalMonthly = salaryTotal / 12;
+    console.log('totalMonthly:', totalMonthly);
     //call empty input function
     emptyInput();
     //call function to append
