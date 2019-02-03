@@ -31,15 +31,8 @@ function addEmployee() {
     let newEmployee = new Employee(firstNameIn, lastNameIn, idNumberIn, jobTitleIn, annualSalaryIn);
     employeeArray.push(newEmployee);
 
-    //setting up annual salary for the monthly total
-    let salaryTotal = 0;
-    for (let employees of employeeArray) {
-        salaryTotal += Number(employees.annualSalary);
-    } // end loop
-    console.log('salaryTotal:', salaryTotal);
-    //split into monthly
-    let totalMonthly = salaryTotal / 12;
-    console.log('totalMonthly:', totalMonthly);
+    //call monthly total function
+    calculateMonthly();
     //call empty input function
     emptyInput();
     //call function to append
@@ -73,6 +66,22 @@ function appendEmployees() {
 }; //end append employees function
 
 //monthly total cost function
+//setting up annual salary for the monthly total
+function calculateMonthly() {
+    let salaryTotal = 0;
+    for (let employees of employeeArray) {
+        salaryTotal += Number(employees.annualSalary);
+    } // end loop
+    console.log('salaryTotal:', salaryTotal);
+    //split into monthly
+    let totalMonthly = salaryTotal / 12;
+    let totalMonthlyRounded = (totalMonthly).toFixed(2);
+    console.log('totalMonthly:', totalMonthly);
+    //append total
+    let monthlyCost = $('#totalMonthly');
+    monthlyCost.empty();
+    monthlyCost.append(`<span>${totalMonthlyRounded}</span>`)
+}; //end calculateMonthly
 
 //delete employee function
 function deleteEmployee() {
